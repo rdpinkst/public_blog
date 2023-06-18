@@ -14,7 +14,7 @@
 #root {
   padding: 0;
   margin: 0;
-  width: 100vw;
+  max-width: 100%;
 }
 
 .app {
@@ -22,10 +22,13 @@
   height: 100vh;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .blog-title {
-  padding: 4rem;
+  padding: 2rem;
 }
 
 .blog-title h1 {
@@ -38,17 +41,17 @@
   width: 120%;
   background: #49274A;
   transform: rotate(-3deg);
-  top: 200px;
-  z-index: 1;
+  top: -70px;
+  z-index: -1;
 }
 .blog-description {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: space-around;
-  height: 15vh;
+  min-height: 15vh;
+  padding-bottom: 1.5rem;
   width: 100%;
   background: #49274A;
-  top: 300px;
   z-index: 3;
 }
 .contain-svg {
@@ -64,4 +67,22 @@
   font-size: 1.5rem;
   color: #F8EEE7;
   width: 60%;
+}
+
+.blog-post {
+  margin-top: auto;
+}
+
+.post-card {
+  height: 100%;
+  min-height: 250px;
+  width: 250px;
+  background-color: red;
+}
+
+.blog-posts {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 5rem;
+  min-height: 30%;
 }
