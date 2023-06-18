@@ -1,0 +1,67 @@
+/* "grape": "#94618E",
+        "eggplant": "#49274A",
+        "sand": "#F4DECB",
+        "shell": "#F8EEE7", */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab', serif;
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+
+.app {
+  background: #F4DECB;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.blog-title {
+  padding: 4rem;
+}
+
+.blog-title h1 {
+  font-size: 3rem;
+  color: #49274A;
+}
+.slant {
+  position: absolute;
+  height: 15vh;
+  width: 120%;
+  background: #49274A;
+  transform: rotate(-3deg);
+  top: 200px;
+  z-index: 1;
+}
+.blog-description {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  height: 15vh;
+  width: 100%;
+  background: #49274A;
+  top: 300px;
+  z-index: 3;
+}
+.contain-svg {
+  height: 100px;
+  width: 100px;
+}
+
+.contain-svg svg {
+  fill: #F8EEE7;
+}
+
+.blog-description p {
+  font-size: 1.5rem;
+  color: #F8EEE7;
+  width: 60%;
+}
