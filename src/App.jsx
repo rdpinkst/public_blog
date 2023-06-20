@@ -1,8 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PostCard from './components/PostCard'
 import './App.css'
 
+const API_GET = "https://holy-water-2894.fly.dev/api/v1/posts"
+
 function App() {
+  const [post, setPost] = useState([]);
+
+  useEffect(() => {
+    getPost()
+  }, [])
+
+  async function getPost() {
+    try {
+      const res = await fetch(API_GET, {
+        method: "GET",
+        mode: "cors",
+      });
+      const data = await res.json();
+      const publishData = data.filter(item => item.publish === "true");
+      setPost(publishData);
+    } catch(error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className='app'>
@@ -21,7 +42,9 @@ function App() {
         <div className='slant'></div>  
       </section>
       <section className='blog-posts'>
-        <PostCard />
+        {post.map(info => {
+        return <PostCard key={info._id} body={info.postBody} title={info.title} />
+        })}
       </section>
     </div>
   )
