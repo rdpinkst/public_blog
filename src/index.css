@@ -78,11 +78,14 @@
   height: 70%;
   min-height: 150px;
   width: 250px;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 1rem;
   border: 2px solid #49274A;
   border-radius: 5px;
   background-color: #94618E;
   color: #F4DECB;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .blog-posts {
@@ -94,5 +97,16 @@
 
 .post-card h2{
   font-size: 1.4rem;
-  margin-bottom: 1.4rem;
+}
+
+button {
+  background-color: #F4DECB;
+  color: #94618E;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
 }
