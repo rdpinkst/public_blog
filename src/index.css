@@ -110,3 +110,80 @@ button {
   font-weight: 700;
   cursor: pointer;
 }
+
+.post-page {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #F4DECB;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-page h1{
+  color: #49274A;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.post-page p {
+  margin-bottom: 2rem;
+}
+
+.commentdiv {
+  border-top: #49274A 2px solid;
+  width: 50%;
+  margin-top: 0rem;
+}
+
+.commentor {
+  font-weight: 800;
+  color: #49274A;
+  margin-top: 0.5rem;
+}
+
+.commentdiv p {
+  text-align: left; 
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.commentdiv .date {
+  text-align: right;
+  margin-right: 0.5rem;
+}
+
+.center-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 50%;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.form-input input, .form-input textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.2rem;
+}
+
+.form-input button {
+  background-color: #49274A;
+  color: #F4DECB;
+}
+
+.form-input label {
+  margin-bottom: 0.1rem;
+  text-align: left;
+  margin-left: 0.5rem;
+}

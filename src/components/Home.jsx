@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import PostCard from './PostCard'
 import '../App.css'
 
+
 const API_GET = "https://holy-water-2894.fly.dev/api/v1/posts"
 
 function Home() {
