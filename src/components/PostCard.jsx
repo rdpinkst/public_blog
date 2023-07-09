@@ -7,7 +7,7 @@ function PostCard({ title, body, id }) {
     <div className="post-card">
         <h2>{title}</h2>
         <p>{body.length >= 20 ? body.slice(0, 20) + "..." : body}</p>
-        <Link to={`/post/${id}`} state={{title, body}}> <button>View Post</button></Link>    
+        <Link to={`/post/${id}`} state={{title, body, id}}> <button>View Post</button></Link>    
     </div>
   )
 }

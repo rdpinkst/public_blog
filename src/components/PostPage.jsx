@@ -1,20 +1,47 @@
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Comment from "./Comment";
 import WriteComment from "./WriteComment";
 
+
+
 function PostPage() {
     const location = useLocation();
-    const {title, body } = location.state;
+    const {title, body, id } = location.state;
+    const API_GET_COMMENTS = "https://holy-water-2894.fly.dev/api/v1/posts/" + id + "/comments"
+
+    const [comment, setComment] = useState([]);
+
+    // useEffect to fetch all comments for particular post
+    useEffect(() => {
+        getPost();
+    }, [])
+
+    async function getPost() {
+        try {
+            const res = await fetch(API_GET_COMMENTS, {
+                method: "GET",
+                mode: "cors"
+            });
+            const data = await res.json();
+
+            if(data.length > 0) {
+                setComment(data);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     return (
         <div className="post-page">
             <h1>{title}</h1>
             <p>{body}</p>
             <div className="center-comments">
-              {comments.map((val, index) => {
-                  return <Comment key= {index}  name= {val.name} comment= {val.comment} />
+              {comment.map((val) => {
+                  return <Comment key= {val._id}  name= {val.username} comment= {val.comment} />
               })}
-              <WriteComment />
+              <WriteComment id={id} setComment= {setComment} />
             </div>  
         </div>
     )
