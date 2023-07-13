@@ -8,7 +8,7 @@ function WriteComment({  id, setComment }) {
     function onSubmit(e) {
         e.preventDefault();
         const data = postComment();
-        setComment(prevComment => [...prevComment, {username: name, comment: text, _id: data._id}])
+        setComment(prevComment => [...prevComment, {username: name, comment: text, _id: data._id, timeStamp: new Date().toLocaleDateString()}])
         setName("");
         setText("");
 

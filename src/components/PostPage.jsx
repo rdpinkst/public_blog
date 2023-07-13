@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Comment from "./Comment";
 import WriteComment from "./WriteComment";
 
@@ -26,7 +26,7 @@ function PostPage() {
             const data = await res.json();
 
             if(data.length > 0) {
-                setComment(data);
+                setComment(data.reverse());
             }
         } catch (error) {
             console.error(error);
@@ -35,11 +35,14 @@ function PostPage() {
 
     return (
         <div className="post-page">
+            <nav className='nav-home'>
+                <Link to='/'><h2>Ryan&apos;s Blog</h2></Link>
+            </nav>
             <h1>{title}</h1>
             <p>{body}</p>
             <div className="center-comments">
               {comment.map((val) => {
-                  return <Comment key= {val._id}  name= {val.username} comment= {val.comment} />
+                  return <Comment key= {val._id}  name= {val.username} comment= {val.comment} timeStamp={val.timeStamp} />
               })}
               <WriteComment id={id} setComment= {setComment} />
             </div>  
