@@ -8,27 +8,33 @@ function WriteComment({  id, setComment }) {
     function onSubmit(e) {
         e.preventDefault();
         const data = postComment();
-        setComment(prevComment => [...prevComment, {username: name, comment: text, _id: data._id, timeStamp: new Date().toLocaleDateString()}])
-        setName("");
-        setText("");
+        if(name.length > 0 && text.length > 0) {
+            setComment(prevComment => [...prevComment, {username: name, comment: text, _id: data._id, timeStamp: new Date().toLocaleDateString()}])
+            setName("");
+            setText("");
+        }
 
     }
 
     async function postComment() {
-        const data = {username: name, comment: text, postid: id};
-        try {
-            const res = await fetch(API_POST_COMMENT, {
-                method: "POST",
-                mode: "cors", 
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-            const resData = await res.json();
-            return resData;
-        } catch(error) {
-            console.error(error);
+        if(name.length > 0 && text.length > 0){
+          const data = {username: name, comment: text, postid: id};
+          try {
+              const res = await fetch(API_POST_COMMENT, {
+                  method: "POST",
+                  mode: "cors", 
+                  headers: {
+                      "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(data),
+              });
+              const resData = await res.json();
+              return resData;
+          } catch(error) {
+              console.error(error);
+          }
+        } else {
+            alert("Name and comment needed to submit.")
         }
     }
 
