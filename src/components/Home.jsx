@@ -31,7 +31,6 @@ function Home() {
       <section className='blog-title'>
         <h1>Ryan&apos;s Blog</h1>
       </section>
-      {/* <div className='slant'></div> */}
       <section className='blog-description'>
       
         <div className='contain-svg'>

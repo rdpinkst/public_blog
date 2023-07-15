@@ -206,3 +206,15 @@ form {
   font-size: 1.25rem;
   
 }
+
+.error {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--sand);
+  color: var(--eggplant);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
