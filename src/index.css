@@ -133,8 +133,9 @@ button {
   margin-bottom: 2.5rem;
 }
 
-.post-page p {
+.post-body {
   margin-bottom: 2rem;
+  width: 60%;
 }
 
 .commentdiv {

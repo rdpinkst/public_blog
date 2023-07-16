@@ -39,7 +39,7 @@ function PostPage() {
                 <Link to='/'><h2>Ryan&apos;s Blog</h2></Link>
             </nav>
             <h1>{title}</h1>
-            <p>{body}</p>
+            <p className="post-body">{body}</p>
             <div className="center-comments">
               {comment.map((val) => {
                   return <Comment key= {val._id}  name= {val.username} comment= {val.comment} timeStamp={val.timeStamp} />
