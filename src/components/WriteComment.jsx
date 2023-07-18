@@ -7,9 +7,9 @@ function WriteComment({  id, setComment }) {
 
     function onSubmit(e) {
         e.preventDefault();
-        const data = postComment();
+        postComment();
         if(name.length > 0 && text.length > 0) {
-            setComment(prevComment => [...prevComment, {username: name, comment: text, _id: data._id, timeStamp: new Date().toLocaleDateString()}])
+            setComment(prevComment => [...prevComment, {username: name, comment: text, _id: Math.random() * 100, timeStamp: new Date().toLocaleDateString()}])
             setName("");
             setText("");
         }
