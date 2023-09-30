@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;800&display=swap');
 
 :root {
-  --eggplant: #49274A;
-  --sand: #F4DECB;
-  --grape: #94618E;
-  --shell: #F8EEE7;
+  --darkblue: #1E232E;
+  --armygreen: #7A6D31;
+  --rose: #7A577A;
+  --elm: #287A70;
+  --forest: #162E25;
+  --white: #f7f8fa;
+  --font-size: 1.3rem;
+  --yeseva: 'Yeseva One', cursive;
+  --josefin: 'Josefin Sans', sans-serif;
 }
 * {
   margin: 0;
@@ -20,7 +25,7 @@
 }
 
 .app {
-  background: var(--sand);
+  background: var(--darkblue);
   min-height: 100vh;
   width: 100%;
   position: relative;
@@ -36,13 +41,13 @@
 
 .blog-title h1 {
   font-size: 3rem;
-  color: var(--eggplant);
+  color: var(--armygreen);
 }
 .slant {
   position: absolute;
   height: 15vh;
   width: 120%;
-  background: var(--eggplant);
+  background: var(--forest);
   transform: rotate(-3deg);
   top: -70px;
   z-index: -1;
@@ -54,21 +59,24 @@
   min-height: 15vh;
   padding-bottom: 1.5rem;
   width: 100%;
-  background: var(--eggplant);
+  background: var(--forest);
   z-index: 3;
 }
 .contain-svg {
   height: 100px;
   width: 100px;
 }
-
+.divider {
+  height: 2px;
+  background-color: #7A577A;
+}
 .contain-svg svg {
-  fill: var(--shell);
+  fill: var(--armygreen);
 }
 
 .blog-description p {
   font-size: 1.5rem;
-  color: var(--shell);
+  color: var(--armygreen);
   width: 60%;
 }
 
@@ -80,21 +88,21 @@
   min-height: 200px;
   width: 250px;
   padding: 1rem;
-  border: 2px solid var(--eggplant);
-  border-radius: 5px;
-  background-color: var(--grape);
-  color: var(--sand);
+  border: 2px solid var(--darkblue);
+  border-radius: 20px;
+  background-color: var(--armygreen);
+  color: var(--darkblue);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .blog-posts {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 5rem;
-  min-height: 30%;
+  min-height: 30%; */
   margin: 0 auto;
 }
 
@@ -103,8 +111,8 @@
 }
 
 button {
-  background-color: var(--sand);
-  color: var(--grape);
+  background-color: var(--rose);
+  color: var(--darkblue);
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
@@ -117,7 +125,7 @@ button {
 .post-page {
   min-height: 100vh;
   width: 100vw;
-  background-color: var(--sand);
+  background-color: var(--forest);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -125,30 +133,32 @@ button {
 }
 
 .post-page h1{
-  color: var(--eggplant);
+  color: var(--armygreen);
   font-size: 3rem;
   margin-bottom: 2.5rem;
 }
 
 .post-body {
   margin-bottom: 2rem;
+  color: var(--white);
   width: 60%;
 }
 
 .commentdiv {
-  border-top: var(--eggplant) 2px solid;
+  border-top: var(--elm) 2px solid;
   width: 100%;
   margin-top: 0rem;
 }
 
-.commentor {
+.commentdiv .commentor {
   font-weight: 800;
-  color: var(--eggplant);
+  color: var(--armygreen);
   margin-top: 0.5rem;
 }
 
 .commentdiv p {
   text-align: left; 
+  color: var(--white);
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   font-size: 1rem;
@@ -169,6 +179,10 @@ button {
 form {
   width: 100%;
 }
+form label {
+  color: var(--armygreen);
+  font-weight: 700;
+}
 .form-input {
   display: flex;
   flex-direction: column;
@@ -183,8 +197,8 @@ form {
 }
 
 .form-input button {
-  background-color: var(--eggplant);
-  color: var(--sand);
+  background-color: var(--rose);
+  color: var(--darkblue);
 }
 
 .form-input label {
@@ -200,7 +214,7 @@ form {
 }
 .nav-home a{
   text-decoration: none;
-  color: var(--eggplant);
+  color: var(--armygreen);
   font-size: 1.25rem;
   
 }
@@ -208,8 +222,8 @@ form {
 .error {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--sand);
-  color: var(--eggplant);
+  background-color: var(--armygreen);
+  color: var(--darkblue);
   display: flex;
   flex-direction: column;
   align-items: center;

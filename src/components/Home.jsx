@@ -31,6 +31,7 @@ function Home() {
       <section className='blog-title'>
         <h1>Ryan&apos;s Blog</h1>
       </section>
+      {/* <div className='divider'></div> */}
       <section className='blog-description'>
       
         <div className='contain-svg'>
@@ -41,6 +42,7 @@ function Home() {
           summer of 2020, and I have came a long way.</p>
         <div className='slant'></div>  
       </section>
+      {/* <div className='divider'></div>  */}
       <section className='blog-posts'>
         {post.map(info => {
         return <PostCard key={info._id} body={info.postBody} title={info.title} id={info._id} />
