@@ -78,7 +78,9 @@
 .blog-description p {
   font-size: 1.5rem;
   color: var(--armygreen);
-  margin: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  
 }
 
 .blog-post {
@@ -100,6 +102,8 @@
 
 .blog-posts {
   margin: 0 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .post-card h2{
@@ -227,3 +231,16 @@ form label {
   justify-content: center;
   font-size: 2rem;
 }  
+
+@media (min-width: 850px) {
+  .blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 0 auto;
+  }
+  .post-card {
+    width: 250px;
+    margin: 3rem 0 0 0;
+  }
+}
