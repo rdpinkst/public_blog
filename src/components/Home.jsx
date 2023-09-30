@@ -12,6 +12,7 @@ function Home() {
     getPost()
   }, [])
 
+
   async function getPost() {
     try {
       const res = await fetch(API_GET, {
