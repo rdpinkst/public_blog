@@ -2,7 +2,7 @@
 
 ## <h1 align="center">Public Blog</h1>
 
-<p align="center">This blog is the client side for a blog API I built using MongoDB, Express, Mongoose, and NodeJS.  Built using React, React-Router-DOM and CSS.  The blog calls the blog API to get all the blog posts to display in cards on the blog front page.  Each blog post has its own page, where users can leave commits on the post.</p>
+This blog is the client side for a blog API I built using MongoDB, Express, Mongoose, and NodeJS.  Built using React, React-Router-DOM and CSS.  The blog calls the blog API to get all the blog posts to display in cards on the blog front page.  Each blog post has its own page, where users can leave commits on the post.
 
 ## Links
 
