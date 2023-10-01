@@ -5,7 +5,7 @@
 
 ## Links
 
-- [Repo](<https://github.com/rdpinkst/public_blog)> "Public Blog Repo")
+- [Repo](<https://github.com/rdpinkst/public_blog> "Public Blog Repo")
 
 - [Live](<Homepage url> "Live View")
 
