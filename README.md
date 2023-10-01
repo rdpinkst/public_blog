@@ -1,11 +1,11 @@
 # public_blog
-<h1 align="center"><Public Blog></h1>
+<h1 align="center">Public Blog</h1>
 
-<p align="center"><This blog is the client side for a blog API I built using MongoDB, Express, Mongoose, and NodeJS.  Built using React, React-Router-DOM and CSS.  The blog calls the blog API to get all the blog posts to display in cards on the blog front page.  Each blog post has its own page, where users can leave commits on the post.></p>
+<p align="center">This blog is the client side for a blog API I built using MongoDB, Express, Mongoose, and NodeJS.  Built using React, React-Router-DOM and CSS.  The blog calls the blog API to get all the blog posts to display in cards on the blog front page.  Each blog post has its own page, where users can leave commits on the post.</p>
 
 ## Links
 
-- [Repo]([https://github.com/rdpinkst/public_blog)> "<Public Blog> Repo")
+- [Repo](<https://github.com/rdpinkst/public_blog)> "Public Blog Repo")
 
 - [Live](<Homepage url> "Live View")
 
