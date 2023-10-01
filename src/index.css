@@ -32,16 +32,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  overflow: hidden;
 }
 
 .blog-title {
   padding: 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
 }
 
 .blog-title h1 {
   font-size: 3rem;
-  color: var(--armygreen);
+  color: var(--white);
 }
 .slant {
   position: absolute;
@@ -54,22 +55,38 @@
 }
 .blog-description {
   position: relative;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   min-height: 15vh;
-  padding-bottom: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
   width: 100%;
   background: var(--forest);
   z-index: 3;
 }
+.max-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .contain-svg {
+  display: flex;
+  align-items: center;
   height: 100px;
   width: 100px;
 }
 .divider {
-  height: 2px;
-  background-color: #7A577A;
+  height: 5px;
+  background: rgb(122,87,122);
+  background: linear-gradient(90deg, rgba(122,87,122,1) 0%, rgba(122,109,49,1) 100%);;
+}
+.top {
+  position: relative;
+  transform: rotate(-3deg);
+  top: -70px;
+  z-index: 10;
 }
 .contain-svg svg {
   fill: var(--armygreen);
@@ -77,7 +94,7 @@
 
 .blog-description p {
   font-size: 1.5rem;
-  color: var(--armygreen);
+  color: var(--white);
   margin: 2rem auto;
   max-width: 1200px;
   
@@ -93,7 +110,7 @@
   border: 2px solid var(--darkblue);
   border-radius: 20px;
   background-color: var(--armygreen);
-  color: var(--darkblue);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -103,7 +120,6 @@
 .blog-posts {
   margin: 0 3rem;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 .post-card h2{
@@ -112,7 +128,7 @@
 
 button {
   background-color: var(--rose);
-  color: var(--darkblue);
+  color: var(--white);
   border: none;
   padding: 0.5rem 0.75rem;
   border-radius: 5px;
@@ -143,6 +159,7 @@ button {
   color: var(--white);
   width: 90%;
   text-align: left;
+  max-width: 1200px;
 }
 
 .commentdiv {
@@ -163,6 +180,7 @@ button {
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   font-size: 1rem;
+  margin: 0 1rem;
 }
 
 .commentdiv .date {
@@ -175,6 +193,7 @@ button {
   flex-direction: column;
   align-items: center;
   width: 90%;
+  max-width: 1200px;
 }
 
 form {
@@ -197,11 +216,6 @@ form label {
   padding: 0.2rem;
 }
 
-.form-input button {
-  background-color: var(--rose);
-  color: var(--darkblue);
-}
-
 .form-input label {
   margin-bottom: 0.1rem;
   text-align: left;
@@ -210,12 +224,13 @@ form label {
 
 .nav-home {
   width: 100%;
+  max-width: 1200px;
   text-align: start;
   padding-left: 2rem;
 }
 .nav-home a{
   text-decoration: none;
-  color: var(--armygreen);
+  color: var(--white);
   font-size: 1.25rem;
   
 }
@@ -237,10 +252,35 @@ form label {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
+  }
+  .blog-title {
+    margin-top: 3rem;
   }
   .post-card {
     width: 250px;
     margin: 3rem 0 0 0;
+  }
+  .max-width {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+  .slant {
+    width: 170%;
+    top: -6rem;
+    left: 0rem;
+  }
+  .top {
+    width: 170%;
+    top: -6rem;
+    left: 0rem;
+  }
+  .contain-svg {
+    width: 200px;
+    height: 200px;
+  }
+  .nav-home {
+    padding-left: 0;
   }
 }
