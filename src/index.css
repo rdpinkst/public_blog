@@ -186,6 +186,7 @@ button {
 .commentdiv .date {
   text-align: right;
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .center-comments {
