@@ -1,31 +1,33 @@
-import { useState, useEffect } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import getPostData from '../customHooks/getPostData'
 import PostCard from './PostCard'
 import '../App.css'
 
 
-const API_GET = "https://holy-water-2894.fly.dev/api/v1/posts"
-
 function Home() {
-  const [post, setPost] = useState([]);
+  const results = useQuery({queryKey: ["post"], queryFn: getPostData})
+  let post = results.data;
 
-  useEffect(() => {
-    getPost()
-  }, [])
+  // const [post, setPost] = useState([]);
+
+  // useEffect(() => {
+  //   getPost()
+  // }, [])
 
 
-  async function getPost() {
-    try {
-      const res = await fetch(API_GET, {
-        method: "GET",
-        mode: "cors",
-      });
-      const data = await res.json();
-      const publishData = data.filter(item => item.publish === "true");
-      setPost(publishData);
-    } catch(error) {
-      console.error(error);
-    }
-  }
+  // async function getPost() {
+  //   try {
+  //     const res = await fetch(API_GET, {
+  //       method: "GET",
+  //       mode: "cors",
+  //     });
+  //     const data = await res.json();
+  //     const publishData = data.filter(item => item.publish === "true");
+  //     setPost(publishData);
+  //   } catch(error) {
+  //     console.error(error);
+  //   }
+  // }
 
   return (
     <div className='app'>
@@ -46,7 +48,7 @@ function Home() {
       </section>
       <div className='divider'></div> 
       <section className='blog-posts'>
-        {post.map(info => {
+        {post?.map(info => {
         return <PostCard key={info._id} body={info.postBody} title={info.title} id={info._id} />
         })}
       </section>
