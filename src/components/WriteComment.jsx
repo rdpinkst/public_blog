@@ -7,7 +7,7 @@ function WriteComment({  id, setComment }) {
     const [name, setName] = useState("");
     const [text, setText] = useState("");
     // const API_POST_COMMENT = "https://holy-water-2894.fly.dev/api/v1/posts/" + id + "/comments"
-    const { mutate, isLoading } = useMutation({
+    const mutation = useMutation({
         mutationFn: postAComment,
         onSuccess: () => {
             queryClient.invalidateQueries({queryKey: ["comment", id]})
@@ -22,8 +22,15 @@ function WriteComment({  id, setComment }) {
         //     setName("");
         //     setText("");
         // }
-        const data = {username: name, comment: text, postid: id};
-        mutate(data);
+        console.log("submitted")
+        const data = {username: name, comment: text, postId: id};
+       console.log(mutation)
+        mutation.mutate(data, {
+            onSuccess: () => {
+                setName("");
+                setText("");
+            }
+        });
     }
 
     // async function postComment() {
@@ -49,7 +56,7 @@ function WriteComment({  id, setComment }) {
     // }
 
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <div className="form-input">
                 <label htmlFor="name">Username:</label>
                 <input id="name" type="text" name="name" onChange={(e) => setName(e.target.value)} value={name} />
@@ -59,7 +66,7 @@ function WriteComment({  id, setComment }) {
                 <textarea id="comment" rows="4" name="comment" onChange={(e) => setText(e.target.value)} value={text} />
             </div>
             <div className="form-input">
-                <button onClick={onSubmit}>Submit</button>
+                <button type="submit">Submit</button>
             </div>
         </form>
     )
