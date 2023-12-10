@@ -48,7 +48,7 @@ function Home() {
       </section>
       <div className='divider'></div> 
       <section className='blog-posts'>
-        {post?.map(info => {
+        {post?.filter(item=> item.publish === "true").map(info => {
         return <PostCard key={info._id} body={info.postBody} title={info.title} id={info._id} />
         })}
       </section>
